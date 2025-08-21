@@ -1,0 +1,359 @@
+/* ===== Reset y base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f5f5;
+    --text: #333;
+    --muted: #666;
+    --brand: #998b8b;
+    --brand-700: #6b5f5f;
+    --brand-700-hover: #5a4d4d;
+    --card: #fff;
+    --line: #e6e6e6;
+    --shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    --radius: 10px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* ===== Utilidades ===== */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid #2f80ed;
+    outline-offset: 2px;
+}
+
+/* ===== Header & Nav ===== */
+header {
+    background: var(--brand);
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.silent-alert {
+    font-size: 20px;
+    padding: 15px;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, .25);
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: .35rem .6rem;
+    border-radius: 8px;
+}
+
+nav a.active,
+nav a:hover {
+    background: rgba(255, 255, 255, .15);
+}
+
+/* ===== Sidebar deslizable ===== */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* cerrado por defecto */
+    width: 250px;
+    height: 100%;
+    background: var(--card);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, .15);
+    transition: left .3s ease;
+    z-index: 1000;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Perfil en sidebar */
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.perfil img {
+    border-radius: 50%;
+}
+
+/* Mis reportes */
+.reportes h3 {
+    margin-bottom: .5rem;
+}
+
+.reportes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 .75rem;
+}
+
+.reportes li {
+    background: #f2f2f2;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    line-height: 1.3;
+    font-size: 14px;
+}
+
+.reportes .fecha {
+    font-weight: 700;
+}
+
+.reportes .curso {
+    color: var(--muted);
+    font-size: 12px;
+    margin-left: .25rem;
+}
+
+.reportes .resumen {
+    margin-top: .25rem;
+    color: #333;
+    font-size: 13px;
+}
+
+.btn-secondary {
+    display: inline-block;
+    border: 1px solid #bbb;
+    background: #fff;
+    color: #333;
+    padding: .45rem .7rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-secondary:hover {
+    background: #f7f7f7;
+}
+
+/* Chat en sidebar */
+.chat {
+    margin-top: 20px;
+}
+
+.chat h3 {
+    margin-bottom: 8px;
+}
+
+#mensajes {
+    height: 160px;
+    overflow-y: auto;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+#mensajes p {
+    margin-bottom: 6px;
+}
+
+.chat-input {
+    display: flex;
+    gap: 8px;
+}
+
+#mensajeInput {
+    flex: 1;
+    min-width: 0;
+    padding: .5rem .6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#enviarMensaje {
+    padding: .5rem .75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: var(--brand-700);
+    color: #fff;
+}
+
+#enviarMensaje:hover {
+    background: var(--brand-700-hover);
+}
+
+/* ===== Main ===== */
+.main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Intro */
+.intro {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.intro h2 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.intro p {
+    color: #444;
+}
+
+/* Grid de tarjetas */
+.grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.caja {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow);
+}
+
+.caja h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.toggleBtn {
+    display: inline-block;
+    margin-bottom: 8px;
+    background: #eee;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: .35rem .6rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.toggleBtn:hover {
+    background: #e6e6e6;
+}
+
+/* Contenido expandible (usa atributo hidden del HTML) */
+.contenido[hidden] {
+    display: none !important;
+}
+
+.contenido {
+    color: #333;
+}
+
+/* CTA */
+.cta {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+.btn-primary {
+    background: var(--brand-700);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: .6rem 1rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: var(--brand-700-hover);
+}
+
+.btn-secondary.btn-link {
+    background: #fff;
+    border: 1px solid #bbb;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: .6rem 1rem;
+    display: inline-block;
+}
+
+.btn-secondary.btn-link:hover {
+    background: #f7f7f7;
+}
+
+/* ===== Responsive nav/ajustes ===== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #sidebar {
+        width: 200px;
+    }
+}
+
+/* ===== (Opcional) Overlay si lo usas en JS ===== */
+#sidebarOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .25);
+    display: none;
+    opacity: 0;
+    transition: opacity .15s ease;
+    z-index: 900;
+}

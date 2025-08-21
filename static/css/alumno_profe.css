@@ -1,0 +1,178 @@
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor del login */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Encabezado */
+.logo-encabezado {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-encabezado .logo {
+    margin-bottom: 15px;
+    border-radius: 50px;
+    width: 100px;
+}
+
+.logo-encabezado h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.logo-encabezado p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Opciones del formulario */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.options input {
+    margin-right: 5px;
+}
+
+.forgot-password {
+    color: #6D4C41;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Botón de login */
+.login-button {
+    background: linear-gradient(to right, #8f7a73, #d8c3bc);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+.login-button:hover {
+    background: linear-gradient(to right, #7e7b77, #4e433a);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* registro*/
+.registro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registro p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.registro p::before,
+.registro p::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 45%;
+    background: #ddd;
+    top: 50%;
+}
+
+.registro p::before {
+    left: 0;
+}
+
+.registro p::after {
+    right: 0;
+}
+
+
+/* Enlace de registro */
+.registro-link {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.registro-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.registro-link a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

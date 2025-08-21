@@ -1,0 +1,417 @@
+/* =========================
+   Reset & Base
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f5f5;
+    --text: #333;
+    --muted: #666;
+    --brand: #998b8b;
+    --brand-700: #6b5f5f;
+    --brand-700-hover: #5a4d4d;
+    --card: #fff;
+    --line: #e6e6e6;
+    --shadow: 0 2px 10px rgba(0, 0, 0, .08);
+    --radius: 12px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus,
+button:focus,
+input:focus {
+    outline: 3px solid #2f80ed;
+    outline-offset: 2px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+/* =========================
+   Header / Navbar
+========================= */
+.site-header {
+    background: var(--brand);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .08);
+}
+
+.site-header .brand {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 12px 16px;
+}
+
+.brand img {
+    display: block;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .2);
+}
+
+.brand-text h1 {
+    font-size: 1.25rem;
+    line-height: 1.1;
+}
+
+.brand-text small {
+    display: block;
+    font-size: .85rem;
+    opacity: .9;
+}
+
+/* botón ☰ (visible en móvil) */
+.menu-toggle {
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    /* se muestra en móvil */
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    padding: 10px 16px 14px;
+    border-top: 1px solid rgba(0, 0, 0, .18);
+}
+
+.nav a,
+.nav button {
+    appearance: none;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    color: #fff;
+    padding: .45rem .75rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: .95rem;
+}
+
+.nav a:hover,
+.nav button:hover {
+    background: rgba(255, 255, 255, .16);
+}
+
+/* Botones destacados en nav */
+.btn-primary {
+    background: var(--brand-700) !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover {
+    background: var(--brand-700-hover) !important;
+}
+
+.btn-secondary {
+    background: #ffffff !important;
+    color: #333 !important;
+    border: 1px solid #bbb !important;
+}
+
+.btn-secondary:hover {
+    background: #f7f7f7 !important;
+}
+
+.btn-tertiary {
+    background: rgba(255, 255, 255, .1) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, .35) !important;
+}
+
+.btn-tertiary:hover {
+    background: rgba(255, 255, 255, .2) !important;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-tertiary {
+    transition: background .15s ease, color .15s ease, border-color .15s ease, transform .05s ease;
+}
+
+.btn-primary:active,
+.btn-secondary:active,
+.btn-tertiary:active {
+    transform: translateY(1px);
+}
+
+/* =========================
+   Sidebar móvil (off-canvas)
+========================= */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    /* oculto por defecto */
+    width: 280px;
+    height: 100%;
+    background: var(--card);
+    box-shadow: -2px 0 12px rgba(0, 0, 0, .18);
+    transition: right .28s ease;
+    z-index: 1000;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.sidebar a,
+.sidebar button {
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: .6rem .75rem;
+    border: 1px solid transparent;
+}
+
+.sidebar a:hover,
+.sidebar button:hover {
+    background: #f7f7f7;
+}
+
+.sidebar .btn-primary {
+    color: #fff;
+    border-color: transparent;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .28);
+    z-index: 900;
+}
+
+.sidebar.is-open {
+    right: 0;
+}
+
+/* tu JS solo alterna esta clase */
+
+/* =========================
+   Hero
+========================= */
+.hero {
+    max-width: 1200px;
+    margin: 28px auto 12px;
+    padding: 0 18px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.hero-media {
+    position: relative;
+    background: #ece9e9;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    min-height: 320px;
+    /* evita colapso si la imagen no existe */
+}
+
+/* efecto skeleton mientras carga */
+.hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, #ece9e9 8%, #f6f3f3 18%, #ece9e9 33%);
+    background-size: 200% 100%;
+    animation: shine 1.2s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
+
+.hero-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+
+/* placeholder (data:image/svg+xml) visible */
+.hero-media img[src^="data:image"] {
+    opacity: 1;
+}
+
+/* imagen real visible */
+.hero-media img:not([src^="data:image"]):not([src=""]) {
+    opacity: 1;
+}
+
+.hero-text {
+    padding: 10px 4px;
+}
+
+.hero-text h2 {
+    font-size: clamp(1.8rem, 1.2rem + 2vw, 2.6rem);
+    margin-bottom: 10px;
+}
+
+.hero-text .sub {
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+
+.hero a {
+    text-decoration: none;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.hero-actions .btn-primary,
+.hero-actions .btn-secondary {
+    text-decoration: none;
+    display: inline-block;
+    padding: .7rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+}
+
+.hero-actions .btn-primary {
+    background: var(--brand-700);
+    color: #fff;
+}
+
+.hero-actions .btn-primary:hover {
+    background: var(--brand-700-hover);
+}
+
+.hero-actions .btn-secondary {
+    background: #fff;
+    color: #333;
+    border: 1px solid #cfcfcf;
+}
+
+.hero-actions .btn-secondary:hover {
+    background: #f7f7f7;
+}
+
+/* =========================
+   Sección ¿Cómo funciona?
+========================= */
+.about {
+    max-width: 1000px;
+    margin: 22px auto 40px;
+    padding: 0 18px;
+}
+
+.about h3 {
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+}
+
+.about p {
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.bullets {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.bullets li {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+}
+
+.bullets i {
+    font-size: 1.2rem;
+    color: var(--brand-700);
+}
+
+/* =========================
+   Footer
+========================= */
+.site-footer {
+    text-align: center;
+    padding: 22px 16px 28px;
+    color: var(--muted);
+    border-top: 1px solid #ddd;
+    background: #fafafa;
+    margin-top: 28px;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 980px) {
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    /* en móvil usamos el sidebar */
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-media {
+        min-height: 220px;
+    }
+
+    .bullets {
+        grid-template-columns: 1fr;
+    }
+}

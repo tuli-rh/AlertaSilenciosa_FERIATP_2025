@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- autor del documento -->
+    <meta name="author" content="yuliethgonzalez@liceovvh.cl" />
+    <!-- título de la pestaña -->
+    <title>Denunciar</title>
+
+    <!-- estilos -->
+    <link rel="stylesheet" href="../static/css/denunciar.css" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
+    <!-- iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="silent-alert">
+            <h1>Alerta Silenciosa</h1>
+        </div>
+
+        <!-- Botón toggle del sidebar (mismo patrón que ayuda.html) -->
+        <button id="menuToggle" class="menu-toggle" aria-label="Abrir o cerrar menú">☰</button>
+
+        <nav aria-label="Principal">
+            <a href="inicio.html">Inicio</a>
+            <a href="ayuda.html">Ayuda</a>
+            <a href="denunciar.html" aria-current="page" class="active">Denunciar</a>
+        </nav>
+    </header>
+
+    <!-- Sidebar deslizable -->
+    <aside id="sidebar" aria-labelledby="aside-title">
+        <h2 id="aside-title" class="sr-only">Panel lateral</h2>
+
+        <div class="perfil">
+            <img src="../static/images/perfil.png" alt="Foto de perfil" width="50" height="50" />
+            <p>Perfil</p>
+        </div>
+
+        <section class="reportes" aria-labelledby="reportes-title">
+            <h3 id="reportes-title">Mis reportes</h3>
+            <ul id="listaReportes" aria-live="polite"></ul>
+            <button id="btnLimpiarReportes" type="button" class="btn-secondary">Vaciar mis reportes</button>
+        </section>
+
+        <section class="chat" id="chatBox" aria-labelledby="chat-title">
+            <h3 id="chat-title">Chat</h3>
+            <div id="mensajes" role="log" aria-live="polite" aria-relevant="additions"></div>
+            <div class="chat-input">
+                <input type="text" id="mensajeInput" placeholder="Escribe un mensaje…"
+                    aria-label="Mensaje para enviar" />
+                <button id="enviarMensaje" type="button" title="Enviar">➤</button>
+            </div>
+        </section>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <section class="formulario" aria-labelledby="form-title">
+            <h2 id="form-title">Nota de denuncia</h2>
+
+            <form id="denunciaForm" novalidate>
+                <fieldset>
+                    <legend class="sr-only">Completa la información de tu denuncia</legend>
+
+                    <div class="form-row">
+                        <label for="curso">Curso (opcional)</label>
+                        <input id="curso" name="curso" type="text" placeholder="Ej: 3°B" inputmode="text"
+                            autocomplete="off" />
+                        <small class="help">Si no deseas indicarlo, puedes dejarlo en blanco.</small>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="fecha">Fecha <span aria-hidden="true">*</span></label>
+                        <input id="fecha" name="fecha" type="date" required aria-describedby="fecha-help" />
+                        <small id="fecha-help" class="help">Selecciona la fecha del hecho.</small>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="detalle">Escribe tu denuncia <span aria-hidden="true">*</span></label>
+                        <textarea id="detalle" name="detalle" rows="6" required minlength="10"
+                            aria-describedby="detalle-help"></textarea>
+                        <small id="detalle-help" class="help">Evita datos que te identifiquen; describe lo ocurrido en
+                            términos generales.</small>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit" class="btn-primary">Enviar</button>
+                        <button type="reset" class="btn-secondary">Limpiar</button>
+                    </div>
+                </fieldset>
+            </form>
+
+            
+        </section>
+    </main>
+
+    <noscript>
+        <p style="padding:1rem">Para continuar, habilita JavaScript en tu navegador.</p>
+    </noscript>
+
+    <!-- JS de la página (módulo) -->
+    <script type="module" src="../static/js/denunciar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="yuliethgonzalez@liceovvh.cl" />
+    <title>Alerta Silenciosa</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="static/css/web.css" />
+
+    <!-- Fuentes / Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Header / Navbar -->
+    <header class="site-header">
+        <div class="brand">
+            <img src="static/images/image.png" alt="Logo Alerta Silenciosa" width="44" height="44" />
+            <div class="brand-text">
+                <h1>Alerta Silenciosa</h1>
+                <!-- Saludo dinámico si hay sesión (auth.js) -->
+                <small id="welcomeName" class="muted"></small>
+            </div>
+        </div>
+
+        <!-- Botón ☰ para sidebar móvil -->
+        <button id="menuToggle" class="menu-toggle" aria-label="Abrir o cerrar menú">☰</button>
+
+        <!-- Nav escritorio (no cambiar enlaces) -->
+        <nav class="nav" aria-label="Principal">
+            <a href="pages/inicio.html">Inicio</a>
+            <a href="pages/ayuda.html">Ayuda</a>
+            <a href="pages/denunciar.html" class="btn-primary">Denunciar</a>
+            <!-- Auth: se muestran/ocultan con auth.js -->
+            <a id="loginBtn" class="btn-secondary" href="pages/sesion.html">Iniciar sesión</a>
+            <a id="signupBtn" class="btn-secondary" href="pages/registro.html">Registrarse</a>
+            <button id="logoutBtn" class="btn-tertiary" type="button" hidden>Cerrar sesión</button>
+        </nav>
+    </header>
+
+    <!-- Sidebar móvil (off-canvas) -->
+    <aside id="sidebar" class="sidebar" aria-hidden="true">
+        <nav aria-label="Menú móvil">
+            <a href="pages/inicio.html">Inicio</a>
+            <a href="pages/ayuda.html">Ayuda</a>
+            <a href="pages/denunciar.html" class="btn-primary">Denunciar</a>
+            <a id="loginBtnMobile" class="btn-secondary" href="pages/sesion.html">Iniciar sesión</a>
+            <a id="signupBtnMobile" class="btn-secondary" href="pages/registro.html">Registrarse</a>
+            <button id="logoutBtnMobile" class="btn-tertiary" type="button" hidden>Cerrar sesión</button>
+        </nav>
+    </aside>
+    <div id="sidebarOverlay" class="sidebar-overlay" hidden></div>
+
+    <!-- Hero -->
+    <main>
+        <section class="hero">
+            <div class="hero-media">
+                <!-- Imagen con fallback SVG si falta hero.jpg (no cambia tus enlaces) -->
+                <img src="static/images/hero.jpg" alt="Ilustración de apoyo y seguridad escolar" width="800"
+                    height="450" loading="lazy"
+                    onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?><!-- Placeholder --><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;450&quot; viewBox=&quot;0 0 800 450&quot;><defs><linearGradient id=&quot;g&quot; x1=&quot;0&quot; x2=&quot;1&quot; y1=&quot;0&quot; y2=&quot;1&quot;><stop offset=&quot;0%&quot; stop-color=&quot;%23e9e5e5&quot;/><stop offset=&quot;100%&quot; stop-color=&quot;%23d9d2d2&quot;/></linearGradient></defs><rect width=&quot;800&quot; height=&quot;450&quot; fill=&quot;url(%23g)&quot;/><g fill=&quot;%238a7f7f&quot; opacity=&quot;.8&quot;><circle cx=&quot;90&quot; cy=&quot;90&quot; r=&quot;40&quot;/><rect x=&quot;150&quot; y=&quot;70&quot; width=&quot;260&quot; height=&quot;16&quot; rx=&quot;8&quot;/><rect x=&quot;150&quot; y=&quot;100&quot; width=&quot;200&quot; height=&quot;14&quot; rx=&quot;7&quot;/></g><text x=&quot;50%&quot; y=&quot;70%&quot; text-anchor=&quot;middle&quot; fill=&quot;%23716a6a&quot; font-family=&quot;Roboto, Arial&quot; font-size=&quot;22&quot;>Imagen de referencia</text></svg>'" />
+            </div>
+
+            <div class="hero-text">
+                <h2>Bienvenido a Alerta Silenciosa</h2>
+                <p class="sub">Reporta situaciones de forma anónima y segura. Estamos para ayudarte.</p>
+                <div class="hero-actions">
+                    <a class="btn-primary" href="pages/denunciar.html">Quiero denunciar ahora</a>
+                    <a class="btn-secondary btn-link" href="pages/ayuda.html">Necesito hablar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Texto informativo -->
+        <section class="about">
+            <h3>¿Cómo funciona?</h3>
+            <p>
+                Esta plataforma permite a estudiantes informar problemas de manera confidencial.
+                Encontrarás sugerencias para describir tu situación con claridad.
+                El equipo docente y de convivencia podrá gestionar los reportes desde el sitio.
+            </p>
+            <ul class="bullets">
+                <li><i class="bi bi-shield-lock"></i> Enfoque en la seguridad y la privacidad.</li>
+                <li><i class="bi bi-chat-square-heart"></i> Apoyo y acompañamiento en el proceso.</li>
+                <li><i class="bi bi-lightbulb"></i> Consejos para expresar tu situación.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Alerta Silenciosa — Liceo VVH</p>
+    </footer>
+
+    <noscript>
+        <p style="padding:1rem;text-align:center">Para usar todas las funciones, habilita JavaScript.</p>
+    </noscript>
+
+    <!-- JS: auth primero, luego comportamiento de index -->
+    <script src="static/js/auth.js" defer></script>
+    <script src="static/js/web.js" defer></script>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("year").textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+
+</html>
