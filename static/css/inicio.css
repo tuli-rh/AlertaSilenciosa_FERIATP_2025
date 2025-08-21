@@ -304,7 +304,7 @@ nav a:hover {
     display: flex;
     gap: 10px;
     justify-content: center;
-    margin-top: 22px;
+    padding: 25px;
 }
 
 .btn-primary {

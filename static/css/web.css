@@ -72,7 +72,7 @@ input:focus {
 
 .brand img {
     display: block;
-    border-radius: 8px;
+    border-radius: 10px;
     background: rgba(255, 255, 255, .2);
 }
 
@@ -295,40 +295,6 @@ input:focus {
 
 .hero a {
     text-decoration: none;
-}
-
-.hero-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.hero-actions .btn-primary,
-.hero-actions .btn-secondary {
-    text-decoration: none;
-    display: inline-block;
-    padding: .7rem 1rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
-}
-
-.hero-actions .btn-primary {
-    background: var(--brand-700);
-    color: #fff;
-}
-
-.hero-actions .btn-primary:hover {
-    background: var(--brand-700-hover);
-}
-
-.hero-actions .btn-secondary {
-    background: #fff;
-    color: #333;
-    border: 1px solid #cfcfcf;
-}
-
-.hero-actions .btn-secondary:hover {
-    background: #f7f7f7;
 }
 
 /* =========================
