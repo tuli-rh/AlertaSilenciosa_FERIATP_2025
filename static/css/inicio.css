@@ -87,7 +87,7 @@ nav {
 nav a {
     color: #fff;
     text-decoration: none;
-    padding: .35rem .6rem;
+    padding: 10px 15px;
     border-radius: 8px;
 }
 
@@ -321,13 +321,14 @@ nav a:hover {
     padding: .6rem 1rem;
     text-decoration: none;
     display: inline-block;
+    text-align: center;
 }
 
 .btn-primary:hover {
     background: var(--brand-700-hover);
 }
 
-.btn-secondary.btn-link {
+.btn-secondary {
     background: #fff;
     border: 1px solid #bbb;
     color: #333;
@@ -335,9 +336,10 @@ nav a:hover {
     border-radius: 10px;
     padding: .6rem 1rem;
     display: inline-block;
+    text-align: center;
 }
 
-.btn-secondary.btn-link:hover {
+.btn-secondary:hover {
     background: #f7f7f7;
 }
 

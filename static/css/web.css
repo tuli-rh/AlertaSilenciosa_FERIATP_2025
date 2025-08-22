@@ -260,12 +260,11 @@ input:focus {
         background-position-x: -200%;
     }
 }
-
 .hero-media img {
     display: block;
     width: 100%;
     height: auto;
-    opacity: 0;
+    /* opacity: 0; */ /* ← comenta esto temporalmente */
     transition: opacity .25s ease;
 }
 
