@@ -253,6 +253,7 @@ nav a:hover {
     display: grid;
     gap: 16px;
     grid-template-columns: repeat(2, 1fr);
+
 }
 
 @media (max-width: 900px) {
@@ -316,7 +317,7 @@ nav a:hover {
 .btn-primary {
     background: var(--brand-700);
     color: #fff;
-    border: none;
+    border: 1px solid #bbb;
     border-radius: 10px;
     padding: .6rem 1rem;
     text-decoration: none;
@@ -325,7 +326,8 @@ nav a:hover {
 }
 
 .btn-primary:hover {
-    background: var(--brand-700-hover);
+    background: #fff;
+    color: #333;
 }
 
 .btn-secondary {
@@ -340,7 +342,8 @@ nav a:hover {
 }
 
 .btn-secondary:hover {
-    background: #f7f7f7;
+    background: var(--brand-700-hover);
+    color: #fff;
 }
 
 /* ===== Responsive nav/ajustes ===== */
