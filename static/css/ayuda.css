@@ -25,23 +25,24 @@ header {
 }
 
 nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.25rem;
-    padding: 10px;
-    border-top: 1px solid rgba(0, 0, 0, .25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, .25);
 }
+
 nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 8px;
 }
 
 nav a.active,
 nav a:hover {
-    background: rgba(255, 255, 255, .15);
+  background: rgba(255, 255, 255, .15);
 }
 
 /* Botón toggle del menú */
@@ -204,7 +205,14 @@ main.cdg {
 .img img {
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
 }
+
+
 
 /* ===== Accesibilidad ===== */
 a:focus,
