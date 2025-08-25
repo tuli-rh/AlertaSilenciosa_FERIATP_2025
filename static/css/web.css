@@ -88,18 +88,6 @@ input:focus {
 }
 
 /* botón ☰ (visible en móvil) */
-.menu-toggle {
-    position: absolute;
-    right: 16px;
-    top: 14px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    display: none;
-    /* se muestra en móvil */
-}
 
 .nav {
     display: flex;
