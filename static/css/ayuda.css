@@ -21,28 +21,27 @@ header {
 
 .silent-alert {
   font-size: 20px;
-  padding: 20px;
+  padding: 22px;
 }
 
 nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  align-items: center;
-  padding: 10px;
-  border-top: 1px solid #686161;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, .25);
 }
-
 nav a {
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 6px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
 }
 
 nav a.active,
 nav a:hover {
-  background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, .15);
 }
 
 /* Botón toggle del menú */
@@ -52,7 +51,7 @@ nav a:hover {
   left: 15px;
   background: none;
   border: none;
-  color: white;
+  color: #fff;
   font-size: 24px;
   cursor: pointer;
 }
@@ -61,7 +60,8 @@ nav a:hover {
 #sidebar {
   position: fixed;
   top: 0;
-  left: -250px; /* Oculto por defecto */
+  left: -250px;
+  /* Oculto por defecto */
   width: 250px;
   height: 100%;
   background: #fff;
