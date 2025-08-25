@@ -89,6 +89,7 @@ input:focus {
 
 /* botón ☰ (visible en móvil) */
 
+
 .nav {
     display: flex;
     flex-wrap: wrap;
@@ -233,6 +234,12 @@ input:focus {
     /* evita colapso si la imagen no existe */
 }
 
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
+
 .hero-media img {
     display: block;
     width: 100%;
@@ -351,5 +358,16 @@ input:focus {
 
     .bullets {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 980px) {
+    .nav {
+        display: flex !important;     
+        flex-direction: row;          
+        justify-content: flex-start;   
+        gap: .5rem;                   
+        padding: 10px 16px;
+        border-top: none;
     }
 }
