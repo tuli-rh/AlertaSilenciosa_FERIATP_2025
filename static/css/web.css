@@ -87,9 +87,6 @@ input:focus {
     opacity: .9;
 }
 
-/* botón ☰ (visible en móvil) */
-
-
 .nav {
     display: flex;
     flex-wrap: wrap;
